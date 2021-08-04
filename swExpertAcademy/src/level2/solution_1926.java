@@ -22,8 +22,8 @@ public class solution_1926 {
         if(num.contains("3") || num.contains("6") || num.contains("9")){
             char[] charArray = num.toCharArray();
             num = "";
-            for(var i=0; i<charArray.length; i++){
-                if(charArray[i] == '3' || charArray[i] == '6' || charArray[i] == '9') {
+            for (char c : charArray) {
+                if (c == '3' || c == '6' || c == '9') {
                     num += "-";
                 }
             }
