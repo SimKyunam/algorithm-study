@@ -13,15 +13,6 @@ public class solution_1984 {
             for(int i=0; i<10; i++) {
                 array[i] = sc.nextFloat();
             }
-//            Arrays.sort(array, Collections.reverseOrder());
-//            Arrays.sort(array);
-//            Arrays.sort(array, (o1, o2) -> o2.compareTo(o2));
-//            Arrays.sort(array, new Comparator<Float>() {
-//                @Override
-//                public int compare(Float o1, Float o2) {
-//                    return o2.compareTo(o1);
-//                }
-//            });
 
             Arrays.sort(array);
 
