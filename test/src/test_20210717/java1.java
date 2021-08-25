@@ -1,6 +1,4 @@
-package test_210717;
-
-import java.util.Arrays;
+package test_20210717;
 
 public class java1 {
     public static void main(String[] args) {
