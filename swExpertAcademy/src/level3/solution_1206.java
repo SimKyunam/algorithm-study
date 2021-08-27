@@ -19,13 +19,13 @@ public class solution_1206 {
     }
 
     public static void resultPrint (int[] buildings, int testCase){
-        int totSum = 0, max = 0, maxIndex = 0, standard = 0;
+        int totSum = 0, max, maxIndex, standard;
 
         for(int i = 2; i < buildings.length - 2; i++){
             max = 0;
             maxIndex = 0;
-
             standard = buildings[i];
+
             //max 구하기
             for(int j = 1; j < 3; j++){
                 if(buildings[i+j] > max){
