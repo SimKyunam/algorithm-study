@@ -10,7 +10,7 @@ public class solution_1933 {
         long start, end;
         int cnt = 0;
 
-        //반으로 줄였을때 약수 구하기
+        //-----------------반으로 줄였을때 약수 구하기-----------------
         List<Integer> list = new ArrayList<>();
         start = System.currentTimeMillis();
         for(int i = 1; i * 2 <= N; i++) {
@@ -40,11 +40,12 @@ public class solution_1933 {
         System.out.print(cnt);
         System.out.println();
         System.out.println("수행시간: " + (end - start) + " ms");
+        //-----------------반으로 줄였을때 약수 구하기-----------------
 
         System.out.println("------------------------------------");
         cnt = 0;
 
-        //일반적인 약수 구하기
+        //-----------------모든 수 약수 구하기-----------------
         start = System.currentTimeMillis();
         for(int i = 1; i <= N; i++){
             if(N % i == 0){
@@ -58,5 +59,6 @@ public class solution_1933 {
         System.out.print(cnt);
         System.out.println();
         System.out.println("수행시간: " + (end - start) + " ms");
+        //-----------------모든 수 약수 구하기-----------------
     }
 }
