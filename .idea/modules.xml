@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/_알고리즘.iml" filepath="$PROJECT_DIR$/_알고리즘.iml" />
       <module fileurl="file://$PROJECT_DIR$/codility/codility.iml" filepath="$PROJECT_DIR$/codility/codility.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackerrank/hackerrank.iml" filepath="$PROJECT_DIR$/hackerrank/hackerrank.iml" />
       <module fileurl="file://$PROJECT_DIR$/programmers/programmers.iml" filepath="$PROJECT_DIR$/programmers/programmers.iml" />
       <module fileurl="file://$PROJECT_DIR$/swExpertAcademy/swExpertAcademy.iml" filepath="$PROJECT_DIR$/swExpertAcademy/swExpertAcademy.iml" />
       <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
