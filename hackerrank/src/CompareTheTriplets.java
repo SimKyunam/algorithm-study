@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
@@ -32,13 +33,20 @@ public class CompareTheTriplets {
         if(a.size() != b.size()) return null;
 
         List<Integer> result = Arrays.asList(0, 0);
-        for(int i=0; i<a.size(); i++) {
+        IntStream.range(0, a.size()).forEach(i -> {
             if(a.get(i) > b.get(i)) {
                 result.set(0, result.get(0) + 1);
             }else if(b.get(i) > a.get(i)){
                 result.set(1, result.get(1) + 1);
             }
-        }
+        });
+//        for(int i=0; i<a.size(); i++) {
+//            if(a.get(i) > b.get(i)) {
+//                result.set(0, result.get(0) + 1);
+//            }else if(b.get(i) > a.get(i)){
+//                result.set(1, result.get(1) + 1);
+//            }
+//        }
 
         return result;
     }
