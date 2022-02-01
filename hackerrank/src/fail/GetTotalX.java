@@ -1,3 +1,5 @@
+package fail;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,42 +37,20 @@ public class GetTotalX {
     public static int getTotalX(List<Integer> a, List<Integer> b) {
         // Write your code here
         int resultCnt = 0;
-        Integer gcdValue = a.stream().reduce(GetTotalX::gcd).orElse(0);
-        Integer maxValue = a.stream().reduce(1, ((integer, integer2) -> integer * integer2)) / gcdValue;
-
-        b.sort(Comparator.naturalOrder());
-        Integer minValue = b.stream().findFirst().orElse(0);
-
-        List<Integer> gcdArray = new ArrayList<>();
-        if(maxValue > 1 || maxValue < minValue) {
-            int i=1;
-            int breakValue = 0;
-            while (breakValue < minValue) {
-                breakValue = maxValue * i;
-                gcdArray.add(breakValue);
-                i++;
+        for(int i = 1; i <= 100; i++) {
+            boolean isOk = true;
+            for(int j=0; j < a.size() && isOk; j++) {
+                if(i % a.get(j) != 0) isOk = false;
             }
-        }
-
-        for(Integer gcdInteger : gcdArray) {
-            int successCnt = 0;
-            for(Integer integer : b) {
-                if(gcdInteger >= integer && gcdInteger % integer == 0) successCnt++;
-                else if(gcdInteger <= integer && integer % gcdInteger == 0) successCnt++;
+            for(int j=0; j < b.size() && isOk; j++) {
+                if(b.get(j) % i != 0) isOk = false;
             }
 
-            if(successCnt == b.size()) {
+            if(isOk)
                 resultCnt++;
-            }
         }
 
         return resultCnt;
     }
 
-    public static int gcd(int a, int b) {
-        if(b == 0) {
-            return a;
-        }
-        return gcd(a, a % b);
-    }
 }
