@@ -29,6 +29,21 @@ public class BonAppetit {
 
     public static void bonAppetit(List<Integer> bill, int k, int b) {
         // Write your code here
-        // TODO 풀어야 함
+        int sum = 0;
+        String result = "";
+
+        for (int i = 0; i < bill.size(); i++) {
+            if (k != i) {
+                sum += bill.get(i);
+            }
+        }
+
+        if (sum / 2 == b) {
+            result = "Bon Appetit";
+        } else {
+            result = String.valueOf(b - (sum / 2));
+        }
+
+        System.out.println(result);
     }
 }
