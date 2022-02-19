@@ -11,16 +11,36 @@ public class PageCount {
         int p = Integer.parseInt(bufferedReader.readLine().trim());
 
         int result = pageCount(n, p);
+        System.out.println(result);
 
         bufferedReader.close();
     }
 
     public static int pageCount(int n, int p) {
         // Write your code here
-        if (n % 2 == 1) {
-            n += 1;
+        int orgOrd = 0;
+        int revOrd = 0;
+        if (n == p) {
+            return 0;
         }
 
-        return 0;
+        for (int i = 0; i < n + 1; i += 2) {
+            if (i == p || i + 1 == p) {
+                break;
+            }
+            orgOrd++;
+        }
+
+        if (n % 2 == 0) {
+            n += 1;
+        }
+        for (int i = n; i >= 0; i -= 2) {
+            if (i == p || i - 1 == p) {
+                break;
+            }
+            revOrd++;
+        }
+
+        return Math.min(orgOrd, revOrd);
     }
 }
