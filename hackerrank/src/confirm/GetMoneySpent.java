@@ -3,9 +3,6 @@ package confirm;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
 public class GetMoneySpent {
 
@@ -52,24 +49,16 @@ public class GetMoneySpent {
         /*
          * Write your code here.
          */
-        List<Integer> resultArray = new ArrayList<>();
         int result = 0;
         for (int keyboard : keyboards) {
             for (int drive : drives) {
                 int sum = keyboard + drive;
-                if (sum <= b) {
-                    resultArray.add(sum);
+                if (sum <= b && sum > result) {
+                    result = sum;
                 }
             }
         }
 
-        if (resultArray.size() > 0) {
-            resultArray.sort(Comparator.reverseOrder());
-            result = resultArray.get(0);
-        } else {
-            result = -1;
-        }
-
-        return result;
+        return result == 0 ? -1 : result;
     }
 }
