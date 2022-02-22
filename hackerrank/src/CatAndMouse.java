@@ -6,7 +6,21 @@ public class CatAndMouse {
 
     // Complete the catAndMouse function below.
     static String catAndMouse(int x, int y, int z) {
-        return "";
+        //x, y Cat
+        //z Mouse
+        String result = "";
+        int catA = Math.abs(z - x);
+        int catB = Math.abs(z - y);
+
+        if (catA == catB) {
+            result = "Mouse C";
+        } else if (catA > catB) {
+            result = "Cat B";
+        } else if (catB > catA) {
+            result = "Cat A";
+        }
+
+        return result;
     }
 
     public static void main(String[] args) throws IOException {
