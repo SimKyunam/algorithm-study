@@ -1,7 +1,10 @@
+package ing;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -34,7 +37,28 @@ public class FormingMagicSquare {
 
     public static int formingMagicSquare(List<List<Integer>> s) {
         // Write your code here
+        List<Integer> dupleList = new ArrayList<>(); //중복된 값
+        List<Integer> existsList = new ArrayList<>(); //존재 값
+        List<Integer> searchList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+        for (List<Integer> numList : s) {
+            for (Integer num : numList) {
+                if (existsList.contains(num)) {
+                    dupleList.add(num);
+                } else {
+                    existsList.add(num);
+                }
+            }
+        }
+
+        List<Integer> emptyList = searchList.stream()
+                .filter(integer -> !existsList.contains(integer))
+                .collect(toList());
+
+        System.out.println(dupleList);
+        System.out.println(emptyList);
+
+        System.out.println(searchList);
         return 0;
     }
-
 }
